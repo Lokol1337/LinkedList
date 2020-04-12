@@ -12,7 +12,7 @@ LinkedList::Node::Node(const ValueType& value, Node* next)
 
 LinkedList::Node::~Node()
 {
-	// ничего не удаляем, т.к. агрегация
+	// Г­ГЁГ·ГҐГЈГ® Г­ГҐ ГіГ¤Г Г«ГїГҐГ¬, ГІ.ГЄ. Г ГЈГ°ГҐГЈГ Г¶ГЁГї
 }
 
 void LinkedList::Node::insertNext(const ValueType& value)
