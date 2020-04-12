@@ -225,8 +225,8 @@ void LinkedList::removeNextNode(Node* node)
 
 void LinkedList::reverse(){
     Node *tmp = _head;
-    Node *next = NULL;
-    Node *last = NULL;
+    Node *next = nullptr;
+    Node *last = nullptr;
     while(tmp->next!=_tail->next){
         next = tmp->next;
         tmp->next = last;
