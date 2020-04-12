@@ -11,7 +11,7 @@ LinkedList::Node::Node(const ValueType& value, Node* next, Node* last){
 }
 
 LinkedList::Node::~Node(){
-	// íè÷åãî íå óäàëÿåì, ò.ê. àãðåãàöèÿ
+	// Ð½Ð¸Ñ‡ÐµÐ³Ð¾ Ð½Ðµ ÑƒÐ´Ð°Ð»ÑÐµÐ¼, Ñ‚.Ðº. Ð°Ð³Ñ€ÐµÐ³Ð°Ñ†Ð¸Ñ
 }
 
 void LinkedList::Node::insertNext(const ValueType& value){
@@ -227,7 +227,7 @@ void LinkedList::reverse(){
     Node *tmp = _head;
     Node *next = NULL;
     Node *last = NULL;
-    while(tmp){
+    while(tmp->next!=_tail->next){
         next = tmp->next;
         tmp->next = last;
         last = tmp;
@@ -318,9 +318,32 @@ int main(){
     LinkedList v;
     for(int i = 0;i < 5;i++)
         v.pushBack(i);
+    for(int i =0; i < v.size(); i++)
+        cout<<v[i]<<" ";
+    cout<<endl;
         v.pushFront(9);
         v.pushBack(9);
-    //v.insertAfterNode(v.findNode(3),9);
+    for(int i =0; i < v.size(); i++)
+        cout<<v[i]<<" ";
+    cout<<endl;
+        v.insert(2,11);
+    for(int i =0; i < v.size(); i++)
+        cout<<v[i]<<" ";
+    cout<<endl;
+    v.insertAfterNode(v.findNode(3),9);
+    for(int i =0; i < v.size(); i++)
+        cout<<v[i]<<" ";
+    cout<<endl;
+    v.removeNextNode(v.findNode(3));
+    for(int i =0; i < v.size(); i++)
+        cout<<v[i]<<" ";
+    cout<<endl;
+    v.removeFront();
+    v.removeBack();
+    for(int i =0; i < v.size(); i++)
+        cout<<v[i]<<" ";
+    cout<<endl;
+    v.reverse();
     for(int i =0; i < v.size(); i++)
         cout<<v[i]<<" ";
 }
