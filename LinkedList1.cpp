@@ -1,3 +1,4 @@
+#pragma once
 #include <iostream>
 #include "LinkedList1.h"
 #include <cassert>
@@ -12,7 +13,7 @@ LinkedList::Node::Node(const ValueType& value, Node* next)
 
 LinkedList::Node::~Node()
 {
-	// íè÷åãî íå óäàëÿåì, ò.ê. àãðåãàöèÿ
+	// ie?aai ia oaaeyai, o.e. aa?aaaoey
 }
 
 void LinkedList::Node::insertNext(const ValueType& value)
@@ -218,7 +219,7 @@ void LinkedList::removeBack()
      if(_head)
         {
         Node *tmp = _head;
-        Node *nd;
+        Node *nd = _head;
         while(tmp->next!=nullptr)
             {
                 nd = tmp;
@@ -325,23 +326,5 @@ void LinkedList::forceNodeDelete(Node* node)
 	Node* nextDeleteNode = node->next;
 	delete node;
 	forceNodeDelete(nextDeleteNode);
-}
-
-int main(){
-    LinkedList v;
-    v.pushBack(1);
-	v.pushFront(0);
-	v.pushBack(2);
-	v.pushBack(2);
-    LinkedList const l(v);
-    cout << "Stage 1: "; for(size_t i = 0; i < v.size(); ++i, cout << " ") cout << v[i];; cout << endl;
-	cout << "Stage 2: "; for(size_t i = 0; i < l.size(); ++i, cout << " ") cout << l[i];; cout << endl;
-	cout << "Stage 3: "; for(size_t i = 0; i < l.size(); ++i, cout << " ") cout << l[i];; cout << endl;
-    LinkedList a = l.reverse();
-    LinkedList b = v.getReverseList();
-    cout << "Stage 4: "; for(size_t i = 0; i < a.size(); ++i, cout << " ") cout << a[i];; cout << endl;
-    cout << "Stage 5: "; for(size_t i = 0; i < l.size(); ++i, cout << " ") cout << b[i];; cout << endl;
-	return 0;
-
 }
 
